@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const apiUrl = 'http://enigmatic-hamlet-36885.herokuapp.com/';
+const apiUrl = 'https://dry-chamber-05388.herokuapp.com';
 @Injectable({
   providedIn: 'root',
 })
@@ -21,15 +21,10 @@ export class UserRegistrationService {
       .pipe(catchError(this.handleError));
   }
 
-  userLogin(): Observable<any> {
-    const token = localStorage.getItem('token');
+  userLogin(userDetails: any): Observable<any> {
     return this.http
-      .post(`${apiUrl}/login`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .post(apiUrl + '/login', userDetails)
+      .pipe(catchError(this.handleError));
   }
 
   getAllMovies(): Observable<any> {
@@ -152,7 +147,9 @@ export class UserRegistrationService {
       console.error('Some error occurred:', error.error.message);
     } else {
       console.error(
-        `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
+        `Error Status code ${error.status}, `,
+        'Error body is:',
+        error.error
       );
     }
     return throwError('Something bad happened; please try again later.');
