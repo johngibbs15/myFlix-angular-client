@@ -23,12 +23,17 @@ export class UserRegistrationService {
 
   userLogin(userDetails: any): Observable<any> {
     return this.http
-      .post(apiUrl + '/login', userDetails)
+      .post(
+        apiUrl +
+          `/login?Username=${userDetails.Username}&Password=${userDetails.Password}`,
+        userDetails
+      )
       .pipe(catchError(this.handleError));
   }
 
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log('Token:', token);
     return this.http
       .get(`${apiUrl}/movies`, {
         headers: new HttpHeaders({
