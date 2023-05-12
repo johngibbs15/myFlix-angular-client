@@ -1,6 +1,8 @@
-<div style="display: flex">
-  <mat-card *ngFor="let movie of movies" style="flex: 1 1 auto">
-    <mat-card-header>
+<app-navbar></app-navbar>
+
+<div class="grid-container">
+  <mat-card *ngFor="let movie of movies" class="movie-card">
+    <mat-card-header style="margin: 0 auto">
       <mat-card-title>{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
         >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
@@ -14,7 +16,6 @@
       >
         Synopsis
       </button>
-
       <button
         mat-button
         color="primary"
@@ -22,7 +23,6 @@
       >
         Genre
       </button>
-
       <button
         mat-button
         color="primary"
@@ -30,7 +30,13 @@
       >
         Director
       </button>
-      <mat-icon>favorite_border</mat-icon>
+      <button
+        style="border: none; background-color: transparent"
+        class="mat-icon-button"
+        (click)="addToFavorites(movie._id)"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

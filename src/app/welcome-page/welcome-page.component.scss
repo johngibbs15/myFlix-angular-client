@@ -1,0 +1,23 @@
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 15vh auto;
+  padding: 0.75em;
+  border-radius: 3px;
+  box-shadow: 0 0.75em 1.25em #0004;
+}
+
+h2.welcome-page__title {
+  text-align: center;
+  margin: 0 auto;
+}
+
+button {
+  padding: 0.75rem 0.25rem;
+  margin: 10px auto;
+  width: 50%;
+  height: 100px;
+}

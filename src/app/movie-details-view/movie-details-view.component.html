@@ -1,7 +1,15 @@
-<mat-card>
-  <mat-card-title>{{ data.Name }}</mat-card-title>
-  <mat-card-content>
+<mat-card class="card">
+  <mat-card-title class="card-title">{{ data.Name }}</mat-card-title>
+  <mat-card-content class="card-content">
     <div><b>Synopsis: </b>{{ data.Synopsis }}</div>
   </mat-card-content>
-  <button>X</button>
+  <button
+    class="director-close-button"
+    mat-stroked-button
+    aria-label="Close the director details button"
+    mat-dialog-close
+    color="primary"
+  >
+    X
+  </button>
 </mat-card>
