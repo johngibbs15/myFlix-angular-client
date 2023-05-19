@@ -8,19 +8,22 @@
       padding: 0;
       font: inherit;
       outline: inherit;
+      flex: 0 0 auto;
     "
     (click)="toMovies()"
   >
     myFlix
   </button>
   <span class="spacer"></span>
-  <button mat-button (click)="toMovies()" class="fixed-right-one">
-    Movies
-  </button>
-  <button mat-button (click)="toProfile()" class="fixed-right-one">
-    Profile
-  </button>
-  <button mat-button (click)="signout()" class="fixed-right-two">
-    Sign Out
-  </button>
+  <div class="mobile-buttons">
+    <button mat-button (click)="toMovies()" class="fixed-right-one">
+      Movies
+    </button>
+    <button mat-button (click)="toProfile()" class="fixed-right-one">
+      Profile
+    </button>
+    <button mat-button (click)="signout()" class="fixed-right-two">
+      Sign Out
+    </button>
+  </div>
 </mat-toolbar>

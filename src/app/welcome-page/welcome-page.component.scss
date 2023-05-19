@@ -1,11 +1,12 @@
 .welcome-page {
+  box-sizing: border-box; /* Include padding in the total width */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  margin: 15vh auto;
-  padding: 0.75em;
+  max-width: 600px;
+  margin: 100px auto; /* Center the card */
+  padding: 20px;
   border-radius: 3px;
   box-shadow: 0 0.75em 1.25em #0004;
 }
@@ -20,4 +21,12 @@ button {
   margin: 10px auto;
   width: 50%;
   height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  /* For screens smaller than 600px, make the card take up most of the screen */
+  .welcome-page {
+    max-width: 90%;
+    padding: 10px; /* Decrease padding for smaller screens */
+  }
 }

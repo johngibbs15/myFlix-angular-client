@@ -1,8 +1,7 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 10px;
-  margin: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
 }
 
 .movie-card {
@@ -32,4 +31,12 @@
   align-items: center;
   width: 100%;
   padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-card {
+    width: 50;
+    margin: 10px auto;
+    box-sizing: border-box;
+  }
 }

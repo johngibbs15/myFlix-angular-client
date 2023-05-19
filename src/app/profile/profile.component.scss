@@ -1,0 +1,26 @@
+.profile-page {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.profile-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.user-profile-actions {
+  display: flex;
+  justify-content: center;
+}
